@@ -34,8 +34,8 @@
             this.radioSuma = new System.Windows.Forms.RadioButton();
             this.radioResta = new System.Windows.Forms.RadioButton();
             this.radioMultiplicacion = new System.Windows.Forms.RadioButton();
-            this.radioDivisison = new System.Windows.Forms.RadioButton();
-            this.button1 = new System.Windows.Forms.Button();
+            this.radioDivision = new System.Windows.Forms.RadioButton();
+            this.buttonAceptar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
@@ -46,6 +46,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(100, 20);
             this.textBox1.TabIndex = 0;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // textBox2
             // 
@@ -53,57 +54,67 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(100, 20);
             this.textBox2.TabIndex = 1;
+            this.textBox2.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // radioSuma
             // 
             this.radioSuma.AutoSize = true;
             this.radioSuma.Checked = true;
-            this.radioSuma.Location = new System.Drawing.Point(158, 68);
+            this.radioSuma.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioSuma.Location = new System.Drawing.Point(155, 61);
             this.radioSuma.Name = "radioSuma";
-            this.radioSuma.Size = new System.Drawing.Size(31, 17);
+            this.radioSuma.Size = new System.Drawing.Size(36, 24);
             this.radioSuma.TabIndex = 2;
             this.radioSuma.TabStop = true;
             this.radioSuma.Text = "+";
             this.radioSuma.UseVisualStyleBackColor = true;
+            this.radioSuma.CheckedChanged += new System.EventHandler(this.radioSuma_CheckedChanged);
             // 
             // radioResta
             // 
             this.radioResta.AutoSize = true;
-            this.radioResta.Location = new System.Drawing.Point(195, 68);
+            this.radioResta.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioResta.Location = new System.Drawing.Point(192, 61);
             this.radioResta.Name = "radioResta";
-            this.radioResta.Size = new System.Drawing.Size(28, 17);
+            this.radioResta.Size = new System.Drawing.Size(32, 24);
             this.radioResta.TabIndex = 3;
             this.radioResta.Text = "-";
             this.radioResta.UseVisualStyleBackColor = true;
+            this.radioResta.CheckedChanged += new System.EventHandler(this.radioSuma_CheckedChanged);
             // 
             // radioMultiplicacion
             // 
             this.radioMultiplicacion.AutoSize = true;
-            this.radioMultiplicacion.Location = new System.Drawing.Point(229, 68);
+            this.radioMultiplicacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioMultiplicacion.Location = new System.Drawing.Point(226, 61);
             this.radioMultiplicacion.Name = "radioMultiplicacion";
-            this.radioMultiplicacion.Size = new System.Drawing.Size(29, 17);
+            this.radioMultiplicacion.Size = new System.Drawing.Size(33, 24);
             this.radioMultiplicacion.TabIndex = 4;
             this.radioMultiplicacion.Text = "*";
             this.radioMultiplicacion.UseVisualStyleBackColor = true;
+            this.radioMultiplicacion.CheckedChanged += new System.EventHandler(this.radioSuma_CheckedChanged);
             // 
-            // radioDivisison
+            // radioDivision
             // 
-            this.radioDivisison.AutoSize = true;
-            this.radioDivisison.Location = new System.Drawing.Point(264, 68);
-            this.radioDivisison.Name = "radioDivisison";
-            this.radioDivisison.Size = new System.Drawing.Size(30, 17);
-            this.radioDivisison.TabIndex = 5;
-            this.radioDivisison.Text = "/";
-            this.radioDivisison.UseVisualStyleBackColor = true;
+            this.radioDivision.AutoSize = true;
+            this.radioDivision.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioDivision.Location = new System.Drawing.Point(261, 61);
+            this.radioDivision.Name = "radioDivision";
+            this.radioDivision.Size = new System.Drawing.Size(31, 24);
+            this.radioDivision.TabIndex = 5;
+            this.radioDivision.Text = "/";
+            this.radioDivision.UseVisualStyleBackColor = true;
+            this.radioDivision.CheckedChanged += new System.EventHandler(this.radioSuma_CheckedChanged);
             // 
-            // button1
+            // buttonAceptar
             // 
-            this.button1.Location = new System.Drawing.Point(33, 59);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 26);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.buttonAceptar.Location = new System.Drawing.Point(33, 59);
+            this.buttonAceptar.Name = "buttonAceptar";
+            this.buttonAceptar.Size = new System.Drawing.Size(100, 26);
+            this.buttonAceptar.TabIndex = 6;
+            this.buttonAceptar.Text = "Calcular";
+            this.buttonAceptar.UseVisualStyleBackColor = true;
+            this.buttonAceptar.Click += new System.EventHandler(this.button1_Click);
             // 
             // label1
             // 
@@ -125,13 +136,14 @@
             // 
             // Form1
             // 
+            this.AcceptButton = this.buttonAceptar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(436, 134);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.radioDivisison);
+            this.Controls.Add(this.buttonAceptar);
+            this.Controls.Add(this.radioDivision);
             this.Controls.Add(this.radioMultiplicacion);
             this.Controls.Add(this.radioResta);
             this.Controls.Add(this.radioSuma);
@@ -154,8 +166,8 @@
         private System.Windows.Forms.RadioButton radioSuma;
         private System.Windows.Forms.RadioButton radioResta;
         private System.Windows.Forms.RadioButton radioMultiplicacion;
-        private System.Windows.Forms.RadioButton radioDivisison;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.RadioButton radioDivision;
+        private System.Windows.Forms.Button buttonAceptar;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
     }
