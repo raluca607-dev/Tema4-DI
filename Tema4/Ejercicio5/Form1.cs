@@ -22,7 +22,7 @@ namespace Ejercicio5
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            String[] datos = { "9", "8", "7", "6", "5", "4", "3", "2", "1", "*", "0", "#", "Reset" };
+            String[] datos = { "1", "2", "3", "4", "5", "6", "7", "8", "9", "*", "0", "#", "Reset" };
             int x = 30;
             int y = 75;
             int cont = 0;
