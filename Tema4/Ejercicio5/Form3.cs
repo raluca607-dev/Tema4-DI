@@ -28,22 +28,33 @@ namespace Ejercicio5
             string nombre;
             string numero;
             string linea;
-            using (StreamReader sr = new StreamReader(ruta))
+            try
             {
-                linea = sr.ReadLine();
-                while (linea != "" && linea != null)
+
+                using (StreamReader sr = new StreamReader(ruta))
                 {
-                    string[] datos = linea.Split(':');
-                    nombre = datos[0];
-                    numero = datos[1];
-
-                    //textBox1.Text += String.Format("{0,15}{1,20}\r\n", nombre, numero);
-                    textBox1.Text += nombre.PadRight(20);
-                    textBox1.Text += numero;
-                    textBox1.Text += "\r\n";
-
                     linea = sr.ReadLine();
+                    while (linea != "" && linea != null)
+                    {
+                        string[] datos = linea.Split(':');
+                        nombre = datos[0];
+                        numero = datos[1];
+
+                        //textBox1.Text += String.Format("{0,15}{1,20}\r\n", nombre, numero);
+                        textBox1.Text += nombre.PadRight(20);
+                        textBox1.Text += numero;
+                        textBox1.Text += "\r\n";
+
+                        linea = sr.ReadLine();
+                    }
                 }
+            }
+            catch (UnauthorizedAccessException a)
+            {
+
+            }
+            catch (IOException a)
+            {
             }
 
         }

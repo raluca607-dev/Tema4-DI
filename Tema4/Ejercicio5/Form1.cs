@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -52,17 +53,6 @@ namespace Ejercicio5
                 x = 30;
                 y += 55;
             }
-            Button btnReset = new Button();
-            btnReset.Text = datos[cont];
-            btnReset.Size = new Size(190, 30);
-            btnReset.Location = new Point(x, y);
-            btnReset.BackColor = Color.LightCyan;
-            this.Controls.Add(btnReset);
-            btnReset.Click += BtnReset_Click;
-            btnReset.KeyPress += Form1_KeyPress;
-
-
-
 
         }
 
@@ -84,36 +74,33 @@ namespace Ejercicio5
 
         private void Boton_Click(object sender, EventArgs e)
         {
-            if (sender is Button btn)
-            {
+            Button btn = (Button)sender;
 
-                textBox1.Text += btn.Text;
-                btn.BackColor = Color.Thistle;
+            textBox1.Text += btn.Text;
+            btn.BackColor = Color.Thistle;
 
-            }
+
         }
 
         private void Form1_MouseEnter(object sender, EventArgs e)
         {
-            if (sender is Button btn)
+            Button btn = (Button)sender;
+            if (btn.BackColor != Color.Thistle)
             {
-                if (btn.BackColor != Color.Thistle)
-                {
-                    btn.BackColor = Color.CornflowerBlue;
-                }
+                btn.BackColor = Color.CornflowerBlue;
             }
+
         }
 
         private void Form1_MouseLeave(object sender, EventArgs e)
         {
 
-            if (sender is Button btn)
+            Button btn = (Button)sender;
+            if (btn.BackColor != Color.Thistle)
             {
-                if (btn.BackColor != Color.Thistle)
-                {
-                    btn.BackColor = Color.LightCyan;
-                }
+                btn.BackColor = Color.LightCyan;
             }
+
         }
 
         private void Form1_KeyPress(object sender, KeyPressEventArgs e)
@@ -124,10 +111,10 @@ namespace Ejercicio5
             }
             if (e.KeyChar == (char)Keys.Back)
             {
-                if (textBox1.Text.Length!=0)
+                if (textBox1.Text.Length != 0)
                 {
 
-                textBox1.Text = textBox1.Text.Remove(textBox1.Text.Length - 1);
+                    textBox1.Text = textBox1.Text.Remove(textBox1.Text.Length - 1);
                 }
             }
 
@@ -137,26 +124,45 @@ namespace Ejercicio5
 
         private void itemMenuGrabar_Click(object sender, EventArgs e)
         {
-            Form2 nuevo = new Form2();
-            if (nuevo.ShowDialog() == DialogResult.OK)
+            if (textBox1.Text != "")
             {
-                if (nuevo.textBox1.Text != "" && textBox1.Text != "")
+
+                Form2 nuevo = new Form2();
+                if (nuevo.ShowDialog() == DialogResult.OK)
                 {
-                    using (StreamWriter sr = new StreamWriter("..\\PruebaEjercicio5.txt", true))
+                    if (nuevo.txtNombre.Text != "")
                     {
+                        try
+                        {
 
-                        sr.WriteLine(nuevo.textBox1.Text + ":" + textBox1.Text);
+                            using (StreamWriter sr = new StreamWriter("..\\PruebaEjercicio5.txt", true))
+                            {
+
+                                sr.WriteLine(nuevo.txtNombre.Text + ":" + textBox1.Text);
+                            }
+                            MessageBox.Show("GUARDADO");
+                        }
+                        catch (UnauthorizedAccessException a)
+                        {
+
+                        }
+                        catch (IOException a)
+                        {
+                        }
+
                     }
-                    MessageBox.Show("GUARDADO");
+                    else
+                    {
+                        MessageBox.Show("No puedes dejar el nombre vacío");
+                    }
+                }
+                nuevo.Dispose();
 
-                }
-                else
-                {
-                    MessageBox.Show("No puede haber campos vacíos");
-                }
             }
-            nuevo.Dispose();
-
+            else
+            {
+                MessageBox.Show("No puedes dejar el número vacío");
+            }
         }
         private bool abierto = false;
 

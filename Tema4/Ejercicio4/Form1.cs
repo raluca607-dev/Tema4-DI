@@ -21,7 +21,7 @@ namespace Ejercicio4
 
         private void buttonAdd_Click(object sender, EventArgs e)
         {
-            String texto = textBox1.Text;
+            String texto = txtAdd.Text;
 
             if (texto != "" && !listBoxMulti.Items.Contains(texto))
             {
@@ -32,18 +32,18 @@ namespace Ejercicio4
 
         private void buttonQuitar_Click(object sender, EventArgs e)
         {
-            if (radioButton1.Checked)
+            if (rblista1.Checked)
             {
                 if (listBoxMulti.SelectedItems.Count > 0)
                 {
 
-                    for (int i = listBoxMulti.SelectedItems.Count-1; i >=0 ; i--)
+                    for (int i = listBoxMulti.SelectedItems.Count - 1; i >= 0; i--)
                     {
                         listBoxMulti.Items.Remove(listBoxMulti.SelectedItems[i]);
                     }
                 }
             }
-            else if (radioButton2.Checked)
+            else if (rbLista2.Checked)
             {
                 if (listBoxUnica.SelectedIndex != -1)
                 {
@@ -59,31 +59,25 @@ namespace Ejercicio4
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
-            if (radioButton1.Checked)
-            {
-                buttonQuitar.Text = "Elimina de 1";
-            }
-            else if (radioButton2.Checked)
-            {
-                buttonQuitar.Text = "Elimina de 2";
-            }
-            else
-            {
-                buttonQuitar.Text = "Eliminar";
 
-            }
-            if (radioButton1a2.Checked)
+            if (sender is RadioButton rb)
             {
-
-                buttonTrasp.Text = "Traspaso 1 -> 2";
-            }
-            else if (radioButton2a1.Checked)
-            {
-                buttonTrasp.Text = "Traspaso 1 <- 2";
-            }
-            else
-            {
-                buttonTrasp.Text = "Traspasar";
+                if (rb == rblista1 || rb == rbLista2)
+                {
+                    buttonQuitar.Text = "Eliminar de " + rb.Tag;
+                }
+                else
+                {
+                    buttonQuitar.Text = "Eliminar";
+                }
+                if (rb == rb1a2 || rb == rb2a1)
+                {
+                    buttonTrasp.Text = "Traspaso " + rb.Tag;
+                }
+                else
+                {
+                    buttonQuitar.Text = "Traspasar";
+                }
             }
             ActualizarLabels();
 
@@ -92,11 +86,11 @@ namespace Ejercicio4
         private void buttonTrasp_Click(object sender, EventArgs e)
         {
 
-            if (radioButton1a2.Checked)
+            if (rb1a2.Checked)
             {
                 if (listBoxMulti.SelectedItems.Count > 0)
                 {
-                    for (int i = listBoxMulti.SelectedItems.Count-1;i>=0; i--)
+                    for (int i = listBoxMulti.SelectedItems.Count - 1; i >= 0; i--)
                     {
 
                         listBoxUnica.Items.Add(listBoxMulti.SelectedItems[i]);
@@ -105,7 +99,7 @@ namespace Ejercicio4
                     }
                 }
             }
-            else if (radioButton2a1.Checked)
+            else if (rb2a1.Checked)
             {
                 if (listBoxUnica.SelectedIndex != -1)
                 {
@@ -131,17 +125,17 @@ namespace Ejercicio4
 
             if (listBoxMulti.SelectedItems.Count == 0)
             {
-                label2.Text = "La lista no tiene nongún indice seleccionado";
+                lbl2.Text = "La lista no tiene nongún indice seleccionado";
 
             }
             else
             {
-                label2.Text = $"La lista 1 tiene seleccionados los índices {texto2}";
+                lbl2.Text = $"La lista 1 tiene seleccionados los índices {texto2}";
 
             }
-            label1.Text = $"La lista 1 contiene {texto1} elementos";
+            lbl1.Text = $"La lista 1 contiene {texto1} elementos";
 
-            toolTip1.SetToolTip(listBoxUnica, "Elementos: "+listBoxUnica.Items.Count);
+            toolTip1.SetToolTip(listBoxUnica, "Elementos: " + listBoxUnica.Items.Count);
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -156,14 +150,14 @@ namespace Ejercicio4
         }
 
         private static String titulo = "Ejercicio 4";
-        private static int i = titulo.Length;
-        private static int cont =0;
+        private static int contTitulo = titulo.Length;
+        private static int cont = 0;
         private void timer1_Tick(object sender, EventArgs e)
         {
-         
-            String tituloFinal = titulo.Substring(i);
+
+            String tituloFinal = titulo.Substring(contTitulo);
             this.Text = tituloFinal;
-            i--;
+            contTitulo--;
 
 
             if (cont % 2 == 0)
@@ -176,11 +170,11 @@ namespace Ejercicio4
             }
 
 
-            if (i < 0)
+            if (contTitulo < 0)
             {
-                i = titulo.Length;
-                
-            cont++;
+                contTitulo = titulo.Length;
+
+                cont++;
             }
         }
     }
