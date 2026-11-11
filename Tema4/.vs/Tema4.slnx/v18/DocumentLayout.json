@@ -1,7 +1,16 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "F:\\DI\\Tema4\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A021C9E9-B951-4743-B53E-E6BC93CAFF8D}|Ejercicio7\\Ejercicio7.csproj|f:\\di\\tema4\\ejercicio7\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A021C9E9-B951-4743-B53E-E6BC93CAFF8D}|Ejercicio7\\Ejercicio7.csproj|solutionrelative:ejercicio7\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0FB93059-5786-4E65-ADED-F4F2DEBE360C}|Ejercicio4\\Ejercicio4.csproj|f:\\di\\tema4\\ejercicio4\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0FB93059-5786-4E65-ADED-F4F2DEBE360C}|Ejercicio4\\Ejercicio4.csproj|solutionrelative:ejercicio4\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,11 +18,37 @@
       "DocumentGroups": [
         {
           "DockedWidth": 372,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Form1.cs",
+              "DocumentMoniker": "F:\\DI\\Tema4\\Ejercicio4\\Form1.cs",
+              "RelativeDocumentMoniker": "Ejercicio4\\Form1.cs",
+              "ToolTip": "F:\\DI\\Tema4\\Ejercicio4\\Form1.cs",
+              "RelativeToolTip": "Ejercicio4\\Form1.cs",
+              "ViewState": "AgIAAFAAAAAAAAAAAAAIwHIAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-11T15:45:13.658Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Form1.cs",
+              "DocumentMoniker": "F:\\DI\\Tema4\\Ejercicio7\\Form1.cs",
+              "RelativeDocumentMoniker": "Ejercicio7\\Form1.cs",
+              "ToolTip": "F:\\DI\\Tema4\\Ejercicio7\\Form1.cs",
+              "RelativeToolTip": "Ejercicio7\\Form1.cs",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAYwDoAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-11T15:41:26.573Z",
+              "EditorCaption": ""
             }
           ]
         }

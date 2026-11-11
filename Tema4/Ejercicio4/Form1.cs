@@ -70,6 +70,7 @@ namespace Ejercicio4
                 {
                     buttonQuitar.Text = "Eliminar";
                 }
+
                 if (rb == rb1a2 || rb == rb2a1)
                 {
                     buttonTrasp.Text = "Traspaso " + rb.Tag;
@@ -108,6 +109,7 @@ namespace Ejercicio4
 
                 }
             }
+
             ActualizarLabels();
 
         }

@@ -37,29 +37,9 @@ namespace Ejercicio7
 
             if (sender is RadioButton rb)
             {
-                if (rb.Text == "+")
-                {
-                    label1.Text = "+";
-                    simbolo = "+";
-                }
-                else if (rb.Text == "-")
-                {
-                    label1.Text = "-";
-                    simbolo = "-";
+                label1.Text = rb.Text;
+                simbolo = rb.Text;
 
-                }
-                else if (rb.Text == "*")
-                {
-                    label1.Text = "*";
-                    simbolo = "*";
-
-                }
-                else if (rb.Text == "/")
-                {
-                    label1.Text = "/";
-                    simbolo = "/";
-
-                }
             }
         }
 
@@ -68,60 +48,21 @@ namespace Ejercicio7
             bool valido = true;
             double num1;
             double num2;
-            if (!double.TryParse(textBox1.Text, out num1))
-            {
-
-                valido = false;
-            }
-            if (!double.TryParse(textBox2.Text, out num2))
-            {
-
-                valido = false;
-            }
-
             double resultado = 0;
-
-            if (valido)
+            if (double.TryParse(textBox1.Text, out num1) && double.TryParse(textBox2.Text, out num2))
             {
-
-                if (radioSuma.Checked)
+                if (radioDivision.Checked&& num2 == 0)
                 {
+                    label2.Text = "=";
+                    return;
 
+                }
+              
                     resultado = tabla[simbolo](num1, num2);
+                    label2.Text = "= " + resultado.ToString();
 
-                }
-                else if (radioResta.Checked)
-                {
-                    resultado = tabla[simbolo](num1, num2);
-
-                }
-                else if (radioMultiplicacion.Checked)
-                {
-                    resultado = tabla[simbolo](num1, num2);
-
-                }
-                else if (radioDivision.Checked)
-                {
-                    if (num2 != 0)
-                    {
-                        resultado = tabla[simbolo](num1, num2);
-
-                    }
-                    else
-                    {
-                        label2.Text = "=";
-
-                    }
-
-                }
-                label2.Text = "= " + resultado.ToString();
+                
             }
-            else
-            {
-                label2.Text = "=";
-
-            }
-
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)

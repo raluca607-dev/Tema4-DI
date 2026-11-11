@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace Ejercicio6
 {
-    public partial class Form1 : Form
+    public partial class Form1 : Form//lIMPIEZA AL CAMBIAR DE DIRECT. PERMISOS.
     {
         public Form1()
         {
@@ -31,9 +31,11 @@ namespace Ejercicio6
 
         private void buttonAbrir_Click(object sender, EventArgs e)
         {
+
+            limpiar();
             if (this.folderBrowserDialog1.ShowDialog() == DialogResult.OK)
             {
-                 ruta = folderBrowserDialog1.SelectedPath;
+                ruta = folderBrowserDialog1.SelectedPath;
 
                 //MessageBox.Show("Carpeta seleccionada: " + ruta);
 
@@ -42,7 +44,15 @@ namespace Ejercicio6
                     int x = 10;
                     int y = 10;
 
-                    archivos = Directory.GetFiles(ruta);
+                    try
+                    {
+
+                        archivos = Directory.GetFiles(ruta);
+                    }
+                    catch (UnauthorizedAccessException a)
+                    {
+                        limpiar();
+                    }
                     for (int i = 0; i < archivos.Length; i++)
                     {
 
@@ -77,8 +87,12 @@ namespace Ejercicio6
                             }
 
                         }
-                        catch (OutOfMemoryException ex)
+                        catch (OutOfMemoryException ex)//Permisos
                         {
+                        }
+                        catch (UnauthorizedAccessException a)
+                        {
+
                         }
 
                     }
@@ -158,6 +172,10 @@ namespace Ejercicio6
             catch (OutOfMemoryException e)
             {
             }
+            catch (UnauthorizedAccessException a)
+            {
+
+            }
         }
 
         private void Form1_KeyUp(object sender, KeyEventArgs e)
@@ -191,7 +209,7 @@ namespace Ejercicio6
                 label1.Text = "Directorio de trabajo: " + Path.GetFullPath(ruta);
                 FileInfo fich = new FileInfo(Path.GetFullPath(imagenes[posicion]));
                 Image img = Image.FromFile(Path.GetFullPath(imagenes[posicion]));
-                label2.Text = String.Format("Datos:\nNombre: {0}\nTamaño: {1}\nResolución: {2}x{3} " ,fich.Name, fich.Length, img.Width, img.Height);
+                label2.Text = String.Format("Datos:\nNombre: {0}\nTamaño: {1}\nResolución: {2}x{3} ", fich.Name, fich.Length, img.Width, img.Height);
             }
             catch (FileNotFoundException e)
             {
@@ -205,8 +223,21 @@ namespace Ejercicio6
             {
 
             }
-        }
+            catch (UnauthorizedAccessException a)
+            {
 
+            }
+        }
+        private void limpiar()
+        {
+            listaImagenes.Clear();
+            panel1.Controls.Clear();
+            posicion = 0;
+            archivos = Array.Empty<string>();
+            imagenes = Array.Empty<string>();
+            ruta = "";
+
+        }
         private void pictureBox1_Click(object sender, EventArgs e)
         {
 
