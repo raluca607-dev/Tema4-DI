@@ -16,6 +16,7 @@ namespace Ejercicio4
         {
             InitializeComponent();
             ActualizarLabels();
+            contTitulo= titulo.Length;
 
         }
 
@@ -151,13 +152,13 @@ namespace Ejercicio4
 
         }
 
-        private static String titulo = "Ejercicio 4";
-        private static int contTitulo = titulo.Length;
-        private static int cont = 0;
+        private  string titulo = "Ejercicio 4";
+        private int contTitulo; 
+        private  int cont = 0;
         private void timer1_Tick(object sender, EventArgs e)
         {
 
-            String tituloFinal = titulo.Substring(contTitulo);
+            string tituloFinal = titulo.Substring(contTitulo);
             this.Text = tituloFinal;
             contTitulo--;
 
