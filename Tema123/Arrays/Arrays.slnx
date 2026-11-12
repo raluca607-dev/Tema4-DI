@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="Arrays/Arrays.csproj" />
+  <Project Path="TablaHash/TablaHash.csproj" Id="9273520e-d8ef-4eb1-ace2-09c9fc6a6d55" />
+</Solution>
