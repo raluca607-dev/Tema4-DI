@@ -1,0 +1,11 @@
+F:\DI\EjemploExamen\EjemploExamen\bin\Debug\EjemploExamen.exe.config
+F:\DI\EjemploExamen\EjemploExamen\bin\Debug\EjemploExamen.exe
+F:\DI\EjemploExamen\EjemploExamen\bin\Debug\EjemploExamen.pdb
+F:\DI\EjemploExamen\EjemploExamen\obj\Debug\EjemploExamen.csproj.AssemblyReference.cache
+F:\DI\EjemploExamen\EjemploExamen\obj\Debug\EjemploExamen.FrmPrincipal.resources
+F:\DI\EjemploExamen\EjemploExamen\obj\Debug\EjemploExamen.FrmDatos.resources
+F:\DI\EjemploExamen\EjemploExamen\obj\Debug\EjemploExamen.Properties.Resources.resources
+F:\DI\EjemploExamen\EjemploExamen\obj\Debug\EjemploExamen.csproj.GenerateResource.cache
+F:\DI\EjemploExamen\EjemploExamen\obj\Debug\EjemploExamen.csproj.CoreCompileInputs.cache
+F:\DI\EjemploExamen\EjemploExamen\obj\Debug\EjemploExamen.exe
+F:\DI\EjemploExamen\EjemploExamen\obj\Debug\EjemploExamen.pdb

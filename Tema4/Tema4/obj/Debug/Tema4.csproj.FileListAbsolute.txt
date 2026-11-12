@@ -1,0 +1,10 @@
+C:\Users\Raluca\Desktop\DI\Tema4\Tema4\bin\Debug\Tema4.exe.config
+C:\Users\Raluca\Desktop\DI\Tema4\Tema4\bin\Debug\Tema4.exe
+C:\Users\Raluca\Desktop\DI\Tema4\Tema4\bin\Debug\Tema4.pdb
+C:\Users\Raluca\Desktop\DI\Tema4\Tema4\obj\Debug\Tema4.csproj.AssemblyReference.cache
+C:\Users\Raluca\Desktop\DI\Tema4\Tema4\obj\Debug\Tema4.Form1.resources
+C:\Users\Raluca\Desktop\DI\Tema4\Tema4\obj\Debug\Tema4.Properties.Resources.resources
+C:\Users\Raluca\Desktop\DI\Tema4\Tema4\obj\Debug\Tema4.csproj.GenerateResource.cache
+C:\Users\Raluca\Desktop\DI\Tema4\Tema4\obj\Debug\Tema4.csproj.CoreCompileInputs.cache
+C:\Users\Raluca\Desktop\DI\Tema4\Tema4\obj\Debug\Tema4.exe
+C:\Users\Raluca\Desktop\DI\Tema4\Tema4\obj\Debug\Tema4.pdb
